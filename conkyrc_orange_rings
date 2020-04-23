@@ -1,0 +1,72 @@
+conky.config = {
+    alignment = 'bl',
+    background = false,
+    border_width = 0,
+    cpu_avg_samples = 2,
+    default_color = 'FF8300',
+    default_outline_color = 'FF8300',
+    default_shade_color = 'FF8300',
+	color1 = 'FD900D',
+	color2 = 'FD9D1A',
+	color3 = 'FFA926',
+	color4 = 'FFB633',
+    draw_borders = false,
+    draw_graph_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'Inconsolata:size=11',
+    gap_x = 20,
+    gap_y = 30,
+    minimum_height = 300,
+    minimum_width = 500,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_argb_value = 0,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false,
+	lua_load = '~/.conky/conky_orange_rings.lua',
+	lua_draw_hook_post = 'main'
+}
+
+conky.text = [[
+
+
+${voffset -30}
+${goto 20}${font Inconsolata:bold:size=8}${color}CPU
+${voffset 5}${goto 20}${font Inconsolata:normal:size=8}${color1}${top name 1}${top cpu 1}%
+${goto 20}${font Inconsolata:normal:size=8}${color2}${top name 2}${top cpu 2}%
+${goto 20}${font Inconsolata:normal:size=8}${color3}${top name 3}${top cpu 3}%
+${goto 20}${color}${cpugraph 20,115 FF8300 FF8300}
+${goto 20}${voffset 1}${font Inconsolata:normal:size=8}${threads} process 
+
+${voffset 90}
+${goto 20}${font Inconsolata:bold:size=8}${color}DISKS${font Inconsolata:normal:size=8}${goto 100}Used
+${voffset 5}${goto 20}${font Inconsolata:normal:size=8}${color}/mount${goto 100}${fs_used /mnt/446682A2668293F8} 
+${voffset 3}${goto 20}${font Inconsolata:normal:size=8}${color}/home${goto 100}${fs_used /}
+${goto 20}${diskiograph 20,115 FF8300 FF8300}${voffset 0}
+
+${voffset -177}
+${font Inconsolata:size=8}${color}${alignc}$nodename 
+${voffset 5}${alignc}Up:$uptime${voffset 0} 
+
+${voffset 5}
+${goto 390}${font Inconsolata:bold:size=8}${color}RAM ${font Inconsolata:normal:size=8}${goto 464}$memperc% used 
+${voffset 5}${goto 390}${font Inconsolata:normal:size=8}${color1}${top_mem name 1}${top_mem mem 1}%
+${goto 390}${font Inconsolata:normal:size=8}${color2}${top_mem name 2}${top_mem mem 2}%
+${goto 390}${font Inconsolata:normal:size=8}${color3}${top_mem name 3}${top_mem mem 3}%
+${voffset 5}${goto 390}${font Inconsolata:normal:size=8}$mem/$memmax  
+${goto 390}${memgraph 20,115 FF8300 FF8300}
+
+]]
