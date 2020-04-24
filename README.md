@@ -16,3 +16,6 @@ This is a first draft.
 Some improvements I wish to make;
 * Make it more flexible in terms of configuration, e.g. dynamically changing positioning of text etc. based on ring radius 
 * Other layout options
+
+## Other
+The currently playing spotify track shown in the top right of the above screenshot is a fork of conky-spotify which [you can get here](https://github.com/harrymckillen/conky-spotify) 
